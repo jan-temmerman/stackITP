@@ -5,5 +5,5 @@ Route::name('questions.')->group(function () {
     Route::get('/question/{id}', 'QuestionsController@questionDetail')->name('questionDetail');
     Route::post('/question/{id}/answer', 'ProjectsController@canswer')->name('answer');
     Route::delete('/question/{id}/delete', 'QuestionsController@destroy')->name('destroy');
-    Route::post('/add_question', 'QuestionsController@saveQuestion')->name('save');
+    Route::post('/', 'QuestionsController@saveQuestion')->name('save');
 });

@@ -11,7 +11,8 @@ use App\Models\Question;
 class QuestionsController extends Controller
 {
     public function home() {
-        return View::make('questions');
+        $questions = Question::all();
+        return View::make('home')->with(compact("questions"));
     }
 
     public function saveQuestion() {
@@ -27,6 +28,6 @@ class QuestionsController extends Controller
 
 		Question::Create($data);
 		
-        return View::make('questions');
+        return redirect('/');
     }
 }

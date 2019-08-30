@@ -7,7 +7,7 @@
     <title>Questions</title>
 </head>
 <body>
-    <form action="{{ route('questions.save') }}" method="post">
+<form action="{{ route('questions.save') }}" method="post">
         @csrf
         <input type="hidden" name="id" value="" />
 
@@ -24,5 +24,10 @@
             </div>
         </div>
     </form>
+@foreach($questions as $question)
+    <div>
+        <h3>{{ $question->content }}</h3>
+    </div>
+@endforeach
 </body>
 </html>
