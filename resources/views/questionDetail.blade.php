@@ -7,29 +7,33 @@
     <title>Questions</title>
 </head>
 <body>
-    <form action="{{ route('questions.save') }}" method="post">
+    <div>
+        <h3>{{ $question->content }}</h3>
+        <p>Question from {{ $question->user->name }}</p>
+    </div>
+
+    <form action="{{ route('questions.answer', $question->id) }}" method="post">
         @csrf
         <input type="hidden" name="id" value="" />
 
         <div >
             <div >
-                <label >Question</label>
+                <label >Answer</label>
                 <div >
-                    <input name="question" type="text" >
+                    <input name="answer" type="text" >
                 </div>
             </div>
             
             <div >
-                <button type="submit">NEXT</button>
+                <button type="submit">Submit</button>
             </div>
         </div>
     </form>
-    @foreach($questions as $question)
-    <a href="{{ route('questions.questionDetail', $question->id) }}">
-        <div>
-            <h3>{{ $question->content }}</h3>
-        </div>
-    </a>
+
+    @foreach($answers as $answer)
+    <div>
+        <h3>{{ $answer->content }}</h3>
+    </div>
     @endforeach
 </body>
 </html>

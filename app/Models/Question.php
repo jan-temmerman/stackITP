@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Question extends Model
 {
@@ -11,6 +12,6 @@ class Question extends Model
     ];
 
     public function user() {
-        return $this->belongsTo("App/Users", "user_id");
+        return $this->belongsTo("App\User", "user_id");
     }
 }
