@@ -9,3 +9,7 @@ Route::name('questions.')->group(function () {
 });
 
 Auth::routes();
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

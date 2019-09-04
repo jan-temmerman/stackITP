@@ -1,0 +1,48 @@
+h1 {
+    font-weight: 700;
+}
+
+a {
+    color: black;
+}
+
+.p-page__container {
+    width: 60%;
+    margin: 0 auto;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    padding: 10px;
+}
+
+.o-container__question {
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.a-button__submit {
+    width: 19%;
+    text-decoration: none;
+    border-radius: 2px;
+    background-color: lightskyblue;
+}
+
+.a-input__text {
+    width: 79%;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    padding: 10px 20px;
+}
+
+.m-container__input {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-bottom: 40px;
+}
+
+.a-text__question {
+    color: black;
+    text-decoration: none;
+}

@@ -4,32 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
     <title>Questions</title>
 </head>
 <body>
-    <form action="{{ route('questions.save') }}" method="post">
-        @csrf
-        <input type="hidden" name="id" value="" />
+    <div class="p-page__container">
+        <h1>StackITP</h1>
+        <form action="{{ route('questions.save') }}" method="post">
+            @csrf
+            <input type="hidden" name="id" value="" />
 
-        <div >
-            <div >
-                <label >Question</label>
-                <div >
-                    <input name="question" type="text" >
-                </div>
+            <label>Ask a question</label>
+            <div class="m-container__input">
+                <input class="a-input__text" name="question" type="text" >
+                <button class="a-button__submit" type="submit">Submit</button>
             </div>
-            
-            <div >
-                <button type="submit">NEXT</button>
+        </form>
+        <h2>Top Questions</h2>
+        @foreach($questions as $question)
+        <a href="{{ route('questions.questionDetail', $question->id) }}">
+            <div class=o-container__question>
+                <h3 class="a-text__question">{{ $question->content }}</h3>
             </div>
-        </div>
-    </form>
-    @foreach($questions as $question)
-    <a href="{{ route('questions.questionDetail', $question->id) }}">
-        <div>
-            <h3>{{ $question->content }}</h3>
-        </div>
-    </a>
-    @endforeach
+        </a>
+        @endforeach
+    </div>
 </body>
 </html>
