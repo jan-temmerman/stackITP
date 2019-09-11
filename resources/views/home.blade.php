@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
+    <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
     <title>Questions</title>
 </head>
 <body>
@@ -22,11 +23,20 @@
         </form>
         <h2>Top Questions</h2>
         @foreach($questions as $question)
-        <a href="{{ route('questions.questionDetail', $question->id) }}">
-            <div class=o-container__question>
-                <h3 class="a-text__question">{{ $question->content }}</h3>
+        <div class="o-container__question">
+            <div id="{{ $question->id }}" class="m-container__vote">
+                <div class="a-vote__up"></div>
+                <p id="{{ $question->id }}p" class="a-vote__number">{{ $question->votes }}</p>
+                <div class="a-vote__down"></div>
             </div>
-        </a>
+            <a class=m-container__question href="{{ route('questions.questionDetail', $question->id) }}">
+                <h3 class="a-text__question">{{ $question->content }}</h3>
+                <div class="m-indicator__container">
+                    <p>{{ $question->answer->count() }}</p>
+                    <p>Answers</p>
+                </div>
+            </a>
+        </div>
         @endforeach
     </div>
 </body>

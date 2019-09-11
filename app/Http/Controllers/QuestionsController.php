@@ -14,7 +14,7 @@ use Auth;
 class QuestionsController extends Controller
 {
     public function home() {
-        $questions = Question::all();
+        $questions = Question::orderBy('votes', 'DESC')->get();
         return View::make('home')->with(compact("questions"));
     }
 

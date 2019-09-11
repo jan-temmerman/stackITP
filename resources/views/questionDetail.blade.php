@@ -20,7 +20,7 @@
 
             <label for="question">Your answer</label>
             <div class="m-container__input">
-                <input class="a-input__text" name="question" type="text" >
+                <input class="a-input__text" name="answer" type="text" >
                 <button class="a-button__submit" type="submit">Submit</button>
             </div>
         </form>

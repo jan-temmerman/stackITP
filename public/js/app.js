@@ -49338,6 +49338,8 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./vote */ "./resources/js/vote.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -49473,6 +49475,64 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/vote.js":
+/*!******************************!*\
+  !*** ./resources/js/vote.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+upvote = function upvote(e) {
+  var URL = "http://127.0.0.1:8000/api/vote";
+  var id = e.target.parentNode.id;
+  var data = {
+    "id": id,
+    "vote": "up"
+  };
+  fetch(URL, {
+    method: 'post',
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  }).then(function (response) {
+    document.getElementById(id + "p").innerHTML = parseInt(document.getElementById(id + "p").innerHTML) + 1;
+  })["catch"](function (error) {});
+};
+
+downvote = function downvote(e) {
+  var URL = "http://127.0.0.1:8000/api/vote";
+  var id = e.target.parentNode.id;
+  var data = {
+    "id": id,
+    "vote": "down"
+  };
+  fetch(URL, {
+    method: 'post',
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  }).then(function (response) {
+    document.getElementById(id + "p").innerHTML = parseInt(document.getElementById(id + "p").innerHTML) - 1;
+  })["catch"](function (error) {});
+};
+
+document.addEventListener('DOMContentLoaded', function (event) {
+  var upArrows = document.getElementsByClassName("a-vote__up");
+  var downArrows = document.getElementsByClassName("a-vote__down");
+  Array.prototype.forEach.call(upArrows, function (arrow) {
+    arrow.addEventListener('click', upvote);
+  });
+  Array.prototype.forEach.call(downArrows, function (arrow) {
+    arrow.addEventListener('click', downvote);
+  });
+});
 
 /***/ }),
 
