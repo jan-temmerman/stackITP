@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
-    <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
-    <title>Questions</title>
-</head>
-<body>
+@extends('layouts.layout')
+
+@section('content')
     <div class="p-page__container">
-        <h1>StackITP</h1>
+        <h1>StackITP2</h1>
         <form action="{{ route('questions.save') }}" method="post">
             @csrf
             <input type="hidden" name="id" value="" />
@@ -39,5 +31,4 @@
         </div>
         @endforeach
     </div>
-</body>
-</html>
+@endsection

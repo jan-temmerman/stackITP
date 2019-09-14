@@ -49486,7 +49486,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 upvote = function upvote(e) {
-  var URL = "http://127.0.0.1:8000/api/vote";
+  var URL = "http://0.0.0.0/api/vote";
   var id = e.target.parentNode.id;
   var data = {
     "id": id,
@@ -49505,7 +49505,7 @@ upvote = function upvote(e) {
 };
 
 downvote = function downvote(e) {
-  var URL = "http://127.0.0.1:8000/api/vote";
+  var URL = "http://0.0.0.0/api/vote";
   var id = e.target.parentNode.id;
   var data = {
     "id": id,
@@ -49554,8 +49554,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jantemmerman/Documents/Professional/ITP/case/stackITP/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/jantemmerman/Documents/Professional/ITP/case/stackITP/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/jantemmerman/Documents/Professional/ITP/case/stackITP2/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/jantemmerman/Documents/Professional/ITP/case/stackITP2/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

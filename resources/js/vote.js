@@ -1,5 +1,5 @@
 upvote = (e) => {
-    const URL = "http://127.0.0.1:8000/api/vote";
+    const URL = "http://0.0.0.0/api/vote";
     let id = e.target.parentNode.id
     let data = {
         "id": id,
@@ -22,7 +22,7 @@ upvote = (e) => {
 }
 
 downvote = (e) => {
-    const URL = "http://127.0.0.1:8000/api/vote";
+    const URL = "http://0.0.0.0/api/vote";
     let id = e.target.parentNode.id
     let data = {
         "id": id,

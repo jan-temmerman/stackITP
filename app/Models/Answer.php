@@ -8,7 +8,9 @@ use App\User;
 class Answer extends Model
 {
     protected $fillable = [
-        'content', 'question_id',
+        'content', 
+        'question_id',
+        'user_id',
     ];
 
     public function user() {

@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
-    <title>Questions</title>
-</head>
-<body>
+@extends('layouts.layout')
+
+@section('content')
     <div class="p-page__container">
         <div>
             <h3>{{ $question->content }}</h3>
@@ -27,10 +20,16 @@
 
         <h2>Answers</h2>
         @foreach($answers as $answer)
-        <div class=o-container__question>
+
+        <?php
+            $timestamp = strtotime($answer->updated_at);
+            $date = date("d-m-Y", $timestamp);
+        ?>
+
+        <div class="m-container__answer">
             <h3 class="a-text__question">{{ $answer->content }}</h3>
+            <p>Answer from {{ $answer->user->name }} on {{ $date }}</p>
         </div>
         @endforeach
     </div>
-</body>
-</html>
+@endsection
