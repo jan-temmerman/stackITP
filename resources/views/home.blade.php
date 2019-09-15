@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="p-page__container">
-        <h1>StackITP2</h1>
         <form action="{{ route('questions.save') }}" method="post">
             @csrf
             <input type="hidden" name="id" value="" />
