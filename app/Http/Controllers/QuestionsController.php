@@ -66,4 +66,16 @@ class QuestionsController extends Controller
             return redirect('/login');
         }
     }
+
+    public function destroy($question_id) {
+        Question::destroy($question_id);
+
+        return redirect('/profile');
+    }
+
+    public function destroyAnswer($question_id, $answer_id) {
+        Answer::destroy($answer_id);
+
+        return back();
+    }
 }

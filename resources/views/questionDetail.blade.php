@@ -29,6 +29,9 @@
         <div class="m-container__answer">
             <h3 class="a-text__question">{{ $answer->content }}</h3>
             <p>Answer from {{ $answer->user->name }} on {{ $date }}</p>
+            @if(Auth::user() && Auth::user()->id == $answer->user_id)
+            <a href="{{route('questions.destroyAnswer',['id'=>$question->id, 'answer_id'=>$answer->id])}}">Delete Answer</a>
+            @endif
         </div>
         @endforeach
     </div>
