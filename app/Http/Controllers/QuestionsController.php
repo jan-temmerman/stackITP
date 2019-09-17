@@ -40,9 +40,13 @@ class QuestionsController extends Controller
     }
 
     public function questionDetail($question_id) {
-        $question = Question::find($question_id);
-        $answers = Answer::where("question_id", $question_id)->get();
-        return View::make('questionDetail')->with(compact("question", "answers"));
+        if(Question::find($question_id)) {
+            $question = Question::find($question_id);
+            $answers = Answer::where("question_id", $question_id)->get();
+            return View::make('questionDetail')->with(compact("question", "answers"));
+        } else {
+            return redirect('/');
+        }
     }
     
     public function answer($question_id) {
