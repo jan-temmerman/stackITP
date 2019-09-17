@@ -28,4 +28,4 @@ Then I did what I should have done from the beginning, which was starting with t
 
 All of this aside, I really enjoyed working on this project because I love working with Laravel and love seeing a project come together. I also liked having to make a little api to make the vote system because that was new to me.
 
-![A happy developer](public/storage/images/jan.JPG)
+![A happy developer](https://github.com/gdm-1718-jantemme/stackITP/blob/master/storage/Readme/Images/jan.JPG)
