@@ -26,7 +26,7 @@
                     <a href="{{ route('questions.questionDetail', $question->id) }}">
                         <p class="a-profile__projectInfo">{{ $question->content }}</p>
                     </a>
-                    <a href="{{route('questions.destroy',[$question->id])}}"><img class="a-button__x" src="{{ asset('storage/images/delete.png') }}" alt="delete"></a>
+                    <a class="a-image__container" href="{{route('questions.destroy',[$question->id])}}"><img class="a-button__x" src="{{ asset('storage/images/delete.png') }}" alt="delete"></a>
                 </div>
                 @endforeach
             </div>

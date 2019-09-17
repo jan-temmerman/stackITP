@@ -18,18 +18,25 @@ button {
 .p-page__container {
     width: 60%;
     margin: 0 auto;
-    border-left: 1px solid lightgray;
-    border-right: 1px solid lightgray;
     padding: 100px 10px 0px 10px;
+    @media screen and (max-width: $break-large) {
+        width: 95%;
+        padding: 100px 2px;
+    }
 }
 
 .o-container__question {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
     border-bottom: 1px solid lightgray;
     width: 100%;
     padding: 10px 10px 0px 10px;
+    margin-bottom: 4px;
+    @media screen and (max-width: $break-large) {
+        padding: 0px;
+    }
 }
 
 .m-container__answer {
@@ -75,6 +82,10 @@ button {
     color: black;
     text-decoration: none;
     font-weight: 300;
+    margin: 0px;
+    @media screen and (max-width: $break-small) {
+        font-size: 16px;
+    }
 }
 
 .m-indicator__container {
@@ -116,8 +127,10 @@ button {
 
 .m-container__vote {
     width: 5%;
+    min-width: 30px;
     text-align: center;
     padding-bottom: 10px;
+    
 }
 
 .o-header__container {
@@ -130,6 +143,9 @@ button {
     background-color: #F8FAFC;
     padding: 16px 20%;
     align-items: center;
+    @media screen and (max-width: $break-large) {
+        padding: 16px 2.5%;
+    }
 }
 
 .a-header__link {
@@ -145,22 +161,32 @@ button {
 }
 
 .o-profile__container {
+    min-width: 250px;
     display: flex;
     flex-direction: column;
     background-color: rgb(238, 238, 238);
     border-radius: 10px;
     padding: 20px;
-    margin: 20px 0 60px 0;
+    margin-top: 20px;
     border: 1px solid lightgray;
+    @media screen and (max-width: $break-large) {
+        width: 100%;
+    }
 }
 
 .o-profile__container:nth-child(1) {
     width: 30%;
     max-height: 190px;
+    @media screen and (max-width: $break-large) {
+        width: 100%;
+    }
 }
 
 .o-profile__container:nth-child(2) {
     width: 69%;
+    @media screen and (max-width: $break-large) {
+        width: 100%;
+    }
 }
 
 .a-profile__subtitle {
@@ -200,6 +226,7 @@ button {
 .o-containers__container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -208,9 +235,20 @@ button {
     flex-direction: row;
     justify-content: space-between;
     flex-grow: none;
+    border-top: 1px solid lightgray;
 }
 
 .a-button__x {
     height: 20px;
     margin-left: 20px;
+}
+
+.a-profile__projectInfo {
+    margin: 10px 0px;
+}
+
+.a-image__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
