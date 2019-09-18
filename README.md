@@ -1,5 +1,54 @@
 # StackITP
 Stackoverflow testcase made with a :heart: by Jan Temmerman for [In The Pocket](https://inthepocket.com/).
+
+## Running the project
+In the root of the project, create an .env file and paste the code below:
+```
+APP_NAME=StackITP
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_URL=http://localhost
+
+LOG_CHANNEL=stack
+
+DB_CONNECTION=mysql
+DB_HOST=db
+DB_PORT=3306
+DB_DATABASE=stackoverflow
+DB_USERNAME=itp
+DB_PASSWORD=shift
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+```
+
+Open a terminal and go to the directory where you cloned the repository.
+
+Execute the following commands:
+```
+docker-compose up
+```
+(Open another terminal if the containers stop when stopping docker-compose)
+With the containers running execute the following commands:
+```
+docker exec app composer install
+docker exec app php artisan key:generate
+docker exec app php artisan migrate
+```
+
+Go to http://localhost/ ! 
+
 ## Framework
 For this case I chose to work with Laravel. I did this because Laravel is a relevant framework with a ton of built in features that I could use, like authentication, database handling and templating. 
 
@@ -26,3 +75,4 @@ Then I did what I should have done from the beginning, which was starting with t
 All of this aside, I really enjoyed working on this project because I love working with Laravel and love seeing a project come together. I also liked having to make a little api to make the vote system because that was new to me.
 
 ![A happy developer](https://github.com/gdm-1718-jantemme/stackITP/blob/master/storage/Readme/Images/jan.JPG)
+
